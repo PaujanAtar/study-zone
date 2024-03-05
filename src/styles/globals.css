@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .header-hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .header-show {
+    display: block;
+  }
+}
+
+body {
+  color: #001427;
+  background-color: #FFFF;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.btn-cream {
+  background-color: #F3D58D;
+  border: 2px solid #001427;
+}
+
+.btn-white {
+  background-color: #FFFFFF;
+  border: 2px solid #001427;
+}
+
+.btn-red {
+    background-color: #DA6E48;
+    border: 2px solid #001427;
+}
+
+.shadow-left {
+  box-shadow: -4px 4px 0px 0px #001427;
+}
+
+.shadow-left-extend {
+  box-shadow: -8px 8px 0px 0px #001427;
+}
+
+.shadow-bottom {
+  box-shadow: 0px 4px 0px 0px #000000;
+  ;
+}
+
+.container {
+  max-width: 2000px;
+  width: 100%;
+  margin: 0px auto;
+  padding-right: 48px;
+  padding-left: 48px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+
+.not-container {
+  max-width: 2000px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.middle-card {
+  grid-column-start: 2; /* Start the card in the second column */
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #E67026 !important;
+}
+
+.darken-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 25%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust the opacity as needed */
+}
