@@ -5,131 +5,18 @@ import { Events } from "@/components/ui/events";
 import { Insights } from "@/components/ui/insights";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import useScreenWidth from "@/hooks/useScreenWidth";
 import FAQItem from "@/components/ui/faq-function";
+import data from "@/data/pages/service-data.json";
 
 const ServicesPage = () => {
-  const services = [
-    {
-      service: "Education Consultation",
-      image: "/EducationConsultation.png",
-      link: "education-consultation",
-    },
-    {
-      service: "Student Accommodation",
-      image: "/StudentAccommodation.png",
-      link: "student-accommodation",
-    },
-    {
-      service: "Student Health Insurance",
-      image: "/StudentHealthInsurance.png",
-      link: "student-health-insurance",
-    },
-    {
-      service: "Student & Tourist Visa",
-      image: "/StudentandTouristVisa.png",
-      link: "student-tourist-visa",
-    },
-    {
-      service: "Travel Arrangement",
-      image: "/TravelArrangement.png",
-      link: "education-consultation",
-    },
-    {
-      service: "English Test",
-      image: "/EnglishTests.png",
-      link: "english-test",
-    },
-    { service: "Scholarship", image: "/Scholarship.png", link: "scholarship" },
-    {
-      service: "Document Translation",
-      image: "/DocumentTranslation.png",
-      link: "document-translation",
-    },
-  ];
+  const services = data.services;
 
-  const steps = [
-    {
-      title: "Counseling",
-      image: "/counseling.jpeg",
-      description: "Plan your Academic and Career Goals.",
-    },
-    {
-      title: "Counseling",
-      image: "/counseling.jpeg",
-      description: "Plan your Academic and Career Goals.",
-    },
-    {
-      title: "Counseling",
-      image: "/counseling.jpeg",
-      description: "Plan your Academic and Career Goals.",
-    },
-    {
-      title: "Counseling",
-      image: "/counseling.jpeg",
-      description: "Plan your Academic and Career Goals.",
-    },
-    {
-      title: "Counseling",
-      image: "/counseling.jpeg",
-      description: "Plan your Academic and Career Goals.",
-    },
-    {
-      title: "Counseling",
-      image: "/counseling.jpeg",
-      description: "Plan your Academic and Career Goals.",
-    },
-    {
-      title: "Counseling",
-      image: "/counseling.jpeg",
-      description: "Plan your Academic and Career Goals.",
-    },
-  ];
+  const steps = data.steps;
 
-  const faqs = [
-    {
-      title: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      title: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      title: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      title: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      title: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ];
+  const faqs = data.faqs;
 
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Update screenWidth state on mount and resize
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const screenWidth = useScreenWidth();
 
   const containerClassName = screenWidth < 769 ? "no-container" : "container";
 
@@ -175,7 +62,7 @@ const ServicesPage = () => {
                       height={286}
                       className="w-full rounded-[12px] object-cover"
                     />
-                    <h1 className="mt-[24px] break-all text-center text-2xl font-semibold text-[#191919] md:break-normal md:text-base">
+                    <h1 className="mt-[24px] text-center text-2xl font-semibold text-[#191919] md:break-normal md:break-all md:text-base">
                       {service.service}
                     </h1>
                   </div>

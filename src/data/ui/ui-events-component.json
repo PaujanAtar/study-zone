@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Test 1",
+        "image": "/events.png",
+        "link": "/travel-arrangement"
+    },
+    {
+        "title": "Test 2",
+        "image": "/events.png",
+        "link": "/english-test"
+    },
+    {
+        "title": "Test 3",
+        "image": "/events.png",
+        "link": "/scholarship"
+    },
+    {
+        "title": "Test 4",
+        "image": "/events.png",
+        "link": "/travel-arrangement"
+    },
+    {
+        "title": "Test 5",
+        "image": "/events.png",
+        "link": "/english-test"
+    },
+    {
+        "title": "Test 6",
+        "image": "/events.png",
+        "link": "/scholarship"
+    }
+]

@@ -2,40 +2,13 @@ import React from "react";
 import Link from "next/link";
 import MainLayout from "@/components/layout/main";
 import { AskBanner } from "@/components/ui/ask-banner";
-import { useState, useEffect } from "react";
+import useScreenWidth from "@/hooks/useScreenWidth";
+import data from "@/data/pages/english-test-tests.json";
 
 const EnglishTest = () => {
-  const tests = [
-    {
-      title: "IELTS",
-      link: "ielts",
-    },
-    {
-      title: "TOEFL",
-      link: "toefl",
-    },
-    {
-      title: "PTE",
-      link: "pte",
-    },
-  ];
+  const tests = data;
 
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Update screenWidth state on mount and resize
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const screenWidth = useScreenWidth();
 
   const containerClassName = screenWidth < 769 ? "no-container" : "container";
 

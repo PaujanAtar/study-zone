@@ -2,42 +2,12 @@ import MainLayout from "@/components/layout/main";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import useScreenWidth from "@/hooks/useScreenWidth";
+import data from "@/data/pages/event-events.json";
 
 const EventPage = () => {
-  const events = [
-    {
-      title: "Travel Arrangement",
-      image: "/events.png",
-      link: "/travel-arrangement",
-    },
-    { title: "English Test", image: "/events.png", link: "/english-test" },
-    { title: "Scholarship", image: "/events.png", link: "/scholarship" },
-    {
-      title: "Travel Arrangement",
-      image: "/events.png",
-      link: "/travel-arrangement",
-    },
-    { title: "English Test", image: "/events.png", link: "/english-test" },
-    { title: "Scholarship", image: "/events.png", link: "/scholarship" },
-  ];
-
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Update screenWidth state on mount and resize
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const events = data;
+  const screenWidth = useScreenWidth();
 
   const numberOfEventsToShow = screenWidth < 769 ? 2 : events.length;
   const containerClassName = screenWidth < 769 ? "no-container" : "container";

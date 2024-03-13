@@ -1,65 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "next/image";
+import useScreenWidth from "@/hooks/useScreenWidth";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper/modules";
+import data from "@/data/feature/swiper-about-career.json";
 
 export default function SwiperAboutCareer() {
-  const careers = [
-    {
-      title: "Study Consultant",
-      division: "Consultant",
-      link: "study-consultant",
-    },
-    {
-      title: "Study Consultant",
-      division: "Consultant",
-      link: "study-consultant",
-    },
-    {
-      title: "Study Consultant",
-      division: "Consultant",
-      link: "study-consultant",
-    },
-    {
-      title: "Study Consultant",
-      division: "Consultant",
-      link: "study-consultant",
-    },
-    {
-      title: "Study Consultant",
-      division: "Consultant",
-      link: "study-consultant",
-    },
-    {
-      title: "Study Consultant",
-      division: "Consultant",
-      link: "study-consultant",
-    },
-  ];
+  const careers = data;
 
-  const [screenWidth, setScreenWidth] = useState(0);
+  const screenWidth = useScreenWidth();
 
   const numberOfCareersToShow =
     screenWidth > 1400 ? 5 : screenWidth < 850 ? 2 : 3;
   const gap = screenWidth < 769 ? 12 : 24;
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Update screenWidth state on mount and resize
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div className="w-full px-[90px] md:flex md:flex-col md:items-center md:px-[24px]">

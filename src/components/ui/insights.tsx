@@ -1,51 +1,12 @@
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import useScreenWidth from "@/hooks/useScreenWidth";
+import data from "@/data//ui/ui-insights-component.json";
 
 export const Insights = () => {
-  const news = [
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/Australia.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/UnitedKingdom.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/America.png",
-      link: "insight1",
-    },
-  ];
+  const news = data;
 
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Update screenWidth state on mount and resize
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const screenWidth = useScreenWidth();
 
   const numberOfInsightsToShow = screenWidth < 769 ? 2 : news.length;
 

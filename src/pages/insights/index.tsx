@@ -2,82 +2,10 @@ import MainLayout from "@/components/layout/main";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import data from "@/data/pages/insight-news.json";
 
 const Insights = () => {
-  const news = [
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/Australia.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/UnitedKingdom.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/America.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/Australia.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/UnitedKingdom.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/America.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/Australia.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/UnitedKingdom.png",
-      link: "insight1",
-    },
-    {
-      headline: "Lorem ipsum dolor sit amet",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.",
-      date: "June 12 2023",
-      image: "/America.png",
-      link: "insight1",
-    },
-  ];
+  const news = data;
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { QueryProvider } from "@/context/query.context";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Albert_Sans, Nunito } from "next/font/google";
+import { Albert_Sans, Nunito, Urbanist } from "next/font/google";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -9,7 +9,7 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const albertSans = Albert_Sans({
+const albertSans = Urbanist({
   subsets: ["latin"],
   variable: "--albert-sans",
   display: "swap",

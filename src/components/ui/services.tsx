@@ -1,46 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import data from "@/data/ui/ui-services-component.json";
 
 export const Services = () => {
-  const services = [
-    {
-      service: "Education Consultation",
-      image: "/EducationConsultation.png",
-      link: "education-consultation",
-    },
-    {
-      service: "Student Accommodation",
-      image: "/StudentAccommodation.png",
-      link: "student-accommodation",
-    },
-    {
-      service: "Student Health Insurance",
-      image: "/StudentHealthInsurance.png",
-      link: "student-health-insurance",
-    },
-    {
-      service: "Student & Tourist Visa",
-      image: "/StudentandTouristVisa.png",
-      link: "student-tourist-visa",
-    },
-    {
-      service: "Travel Arrangement",
-      image: "/TravelArrangement.png",
-      link: "education-consultation",
-    },
-    {
-      service: "English Test",
-      image: "/EnglishTests.png",
-      link: "english-test",
-    },
-    { service: "Scholarship", image: "/Scholarship.png", link: "scholarship" },
-    {
-      service: "Document Translation",
-      image: "/DocumentTranslation.png",
-      link: "document-translation",
-    },
-  ];
+  const services = data;
 
   return (
     <>

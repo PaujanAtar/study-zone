@@ -1,41 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import Link from "next/link";
+import useScreenWidth from "@/hooks/useScreenWidth";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Navigation, FreeMode, Pagination } from "swiper/modules";
+import data from "@/data/feature/swiper-about-achievment.json";
 
 export default function SwiperAboutAchievement() {
-  const achievements = [
-    "/achievement.jpeg",
-    "/achievement.jpeg",
-    "/achievement.jpeg",
-    "/achievement.jpeg",
-    "/achievement.jpeg",
-    "/achievement.jpeg",
-  ];
+  const achievements = data;
 
-  const [screenWidth, setScreenWidth] = useState(0);
+  const screenWidth = useScreenWidth();
 
   const numberOfAchievementsToShow =
     screenWidth > 1400 ? 5 : screenWidth < 850 ? 2 : 3;
   const gap = screenWidth < 769 ? 12 : 24;
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Update screenWidth state on mount and resize
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div className="w-full px-[100px] md:flex md:flex-col md:items-center md:px-0">

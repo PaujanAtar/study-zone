@@ -5,34 +5,10 @@ import { Testimony } from "@/components/ui/testimony";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import data from "@/data/pages/study-destinations-universities.json";
 
 const CountryDetails = () => {
-  const universities = [
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-    { title: "Lorem", image: "/LogoIpsum.png" },
-  ];
+  const universities = data;
   return (
     <>
       <MainLayout>

@@ -1,53 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import MainLayout from "@/components/layout/main";
-import Link from "next/link";
 import { AskBanner } from "@/components/ui/ask-banner";
-import { useState, useEffect } from "react";
-import SwiperAboutCareer from "@/components/ui/swiper-about-career";
-import SwiperAboutAchievement from "@/components/ui/swiper-about-achievement";
-import SwiperAboutGallery from "@/components/ui/swiper-about-gallery";
+import useScreenWidth from "@/hooks/useScreenWidth";
+import SwiperAboutCareer from "@/components/features/swiper-about-career";
+import SwiperAboutAchievement from "@/components/features/swiper-about-achievement";
+import SwiperAboutGallery from "@/components/features/swiper-about-gallery";
+import data from "@/data/pages/about-profiles.json";
 
 const AboutUs = () => {
-  const profiles = [
-    { name: "John Doe", position: "Founder & CEO", image: "/testi1.jpeg" },
-    { name: "John Doe", position: "Founder & CEO", image: "/testi1.jpeg" },
-    { name: "John Doe", position: "Founder & CEO", image: "/testi1.jpeg" },
-    { name: "John Doe", position: "Founder & CEO", image: "/testi1.jpeg" },
-    { name: "John Doe", position: "Founder & CEO", image: "/testi1.jpeg" },
-    { name: "John Doe", position: "Founder & CEO", image: "/testi1.jpeg" },
-    { name: "John Doe", position: "Founder & CEO", image: "/testi1.jpeg" },
-    { name: "John Doe", position: "Founder & CEO", image: "/testi1.jpeg" },
-    { name: "John Doe", position: "Founder & CEO", image: "/testi1.jpeg" },
-  ];
+  const profiles = data;
 
-  const galleries = [
-    "/gallery1.jpeg",
-    "/gallery2.jpeg",
-    "/gallery3.jpeg",
-    "/gallery4.jpeg",
-  ];
-
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Update screenWidth state on mount and resize
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const screenWidth = useScreenWidth();
 
   const numberOfProfilesToShow = screenWidth < 769 ? 3 : profiles.length;
-  const numberOfGalleriesToShow = screenWidth < 769 ? 2 : galleries.length;
-  screenWidth < 769 ? 2 : galleries.length;
   const containerClassName = screenWidth < 769 ? "no-container" : "container";
 
   return (

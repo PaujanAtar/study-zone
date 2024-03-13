@@ -1,80 +1,18 @@
-import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import "swiper/css";
+import useScreenWidth from "@/hooks/useScreenWidth";
 import { Navigation, FreeMode, Pagination } from "swiper/modules";
+import data from "@/data/feature/swiper-ui-component-testimony.json";
 
 export default function SwiperTestimony() {
-  const testimonies = [
-    {
-      name: "John Doe",
-      town: "Jakarta",
-      message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-      image: "/testi1.jpeg",
-    },
+  const testimonies = data;
 
-    {
-      name: "Jane Doe",
-      town: "Jakarta",
-      message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-      image: "/testi2.jpeg",
-    },
-
-    {
-      name: "Jane Doe",
-      town: "Jakarta",
-      message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-      image: "/testi3.jpeg",
-    },
-
-    {
-      name: "Jane Doe",
-      town: "Jakarta",
-      message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-      image: "/testi3.jpeg",
-    },
-
-    {
-      name: "Jane Doe",
-      town: "Jakarta",
-      message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-      image: "/testi3.jpeg",
-    },
-
-    {
-      name: "Jane Doe",
-      town: "Jakarta",
-      message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-      image: "/testi3.jpeg",
-    },
-  ];
-
-  const [screenWidth, setScreenWidth] = useState(0);
+  const screenWidth = useScreenWidth();
 
   const numberOfTestimoniesToShow =
     screenWidth > 1400 ? 5 : screenWidth < 850 ? 2 : 3;
   const gap = screenWidth < 769 ? 12 : 24;
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Update screenWidth state on mount and resize
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div className="w-full px-[90px] md:flex md:flex-col md:items-center md:px-[24px]">
@@ -116,16 +54,18 @@ export default function SwiperTestimony() {
                 height={218}
                 className="h-[218px] max-h-[218px] rounded-t-[12px] object-cover"
               />
-              <p className="mx-[12px] line-clamp-3 text-sm font-normal">
-                {testimony.message}
-              </p>
-              <div>
-                <h1 className="mx-[12px] text-xl font-semibold">
-                  {testimony.name}
-                </h1>
-                <h2 className="mx-[12px] text-sm font-light">
-                  {testimony.town}
-                </h2>
+              <div className="py-[24px]">
+                <p className="mx-[12px] line-clamp-3 text-sm font-normal">
+                  {testimony.message}
+                </p>
+                <div>
+                  <h1 className="mx-[12px] pt-[24px] text-xl font-semibold">
+                    {testimony.name}
+                  </h1>
+                  <h2 className="mx-[12px] text-sm font-light">
+                    {testimony.town}
+                  </h2>
+                </div>
               </div>
             </SwiperSlide>
           ))}
@@ -149,7 +89,7 @@ export default function SwiperTestimony() {
       </div>
       <div
         className={
-          "swiper-pagination-testimony mt-[24px] hidden cursor-pointer justify-center gap-[8px] text-[#E67026] md:mb-[80px] md:block"
+          "swiper-pagination-testimony mt-[24px] hidden cursor-pointer justify-center gap-[8px] text-[#E67026] md:mb-[80px] md:flex"
         }
       />
     </div>

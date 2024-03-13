@@ -1,6 +1,6 @@
 import Image from "next/image";
+import useScreenWidth from "@/hooks/useScreenWidth";
 import Link from "next/link";
-import { Inter } from "next/font/google";
 import MainLayout from "@/components/layout/main";
 import { Countries } from "@/components/ui/countries";
 import { Services } from "@/components/ui/services";
@@ -9,9 +9,11 @@ import { Ask } from "@/components/ui/ask";
 import { Testimony } from "@/components/ui/testimony";
 import { AskBanner } from "@/components/ui/ask-banner";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
+  const screenWidth = useScreenWidth();
+
+  const formWidth = screenWidth < 1100 ? "max-w-[372px]" : "w-[372px]";
+
   return (
     <MainLayout>
       <main>
@@ -220,9 +222,9 @@ export default function Home() {
 
         {/* ---------------------------------------------------------------------------------- */}
 
-        <div className="container flex flex-row justify-center">
-          <div className="shadow-left my-[160px] flex h-[184px] w-[70vw] flex-row items-center rounded-[12px] border-2 border-[#000000] bg-[#FEDB99] px-[48px] md:my-[80px] md:h-auto md:flex-col md:py-[24px]">
-            <div className="mr-[24px] flex flex-col md:mr-0 md:justify-center md:text-center">
+        <div className="flex flex-row justify-center">
+          <div className="shadow-left my-[160px] flex h-[184px] w-[80vw] flex-row items-center justify-between rounded-[12px] border-2 border-[#000000] bg-[#FEDB99] px-[48px] md:my-[80px] md:h-auto md:flex-col md:py-[24px]">
+            <div className="mr-[24px] flex max-w-[450px] flex-col md:mr-0 md:justify-center md:text-center">
               <h1 className="text-2xl font-semibold md:text-xl">
                 Subscribe to our newsletter
               </h1>
@@ -237,7 +239,7 @@ export default function Home() {
             >
               <input
                 type="text"
-                className="shadow-left h-[60px] max-w-[372px] rounded-[4px] border-[1px] border-[#000000] p-[18px]"
+                className={`shadow-left h-[60px] ${formWidth} rounded-[4px] border-[1px] border-[#000000] p-[18px]`}
                 placeholder="Enter your email"
               />
               <button className="btn-white shadow-left rounded-[12px] px-[36px] py-[16px] text-xl font-semibold md:text-base">

@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Travel Arrangement",
+        "image": "/events.png",
+        "link": "/travel-arrangement"
+    },
+    {
+        "title": "English Test",
+        "image": "/events.png",
+        "link": "/english-test"
+    },
+    {
+        "title": "Scholarship",
+        "image": "/events.png",
+        "link": "/scholarship"
+    },
+    {
+        "title": "Travel Arrangement",
+        "image": "/events.png",
+        "link": "/travel-arrangement"
+    },
+    {
+        "title": "English Test",
+        "image": "/events.png",
+        "link": "/english-test"
+    },
+    {
+        "title": "Scholarship",
+        "image": "/events.png",
+        "link": "/scholarship"
+    }
+]

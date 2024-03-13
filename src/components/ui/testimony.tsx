@@ -1,26 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import { Insights } from "./insights";
-import test from "node:test";
-import SwiperTestimony from "./swiper-testimony";
+import SwiperTestimony from "../features/swiper-ui-component-testimony";
+import useScreenWidth from "@/hooks/useScreenWidth";
 
 export const Testimony = () => {
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Update screenWidth state on mount and resize
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener on unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const screenWidth = useScreenWidth();
 
   const containerClassName = screenWidth < 769 ? "no-container" : "container";
 
@@ -57,7 +40,7 @@ export const Testimony = () => {
             </h1>
           </div>
         </div>
-        <div className="mb-[160px] mt-[-70px] flex flex-row justify-center md:mt-[-120px]">
+        <div className="mb-[160px] mt-[-100px] flex flex-row justify-center md:mt-[-120px]">
           <Insights />
         </div>
       </div>
