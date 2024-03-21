@@ -6,7 +6,7 @@ export const Countries = () => {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
-    const storedData = localStorage.getItem("CountriesComponent");
+    const storedData = localStorage.getItem("Countries");
     const parsedData = storedData ? JSON.parse(storedData) : {};
     setCountries(parsedData);
   }, []);
