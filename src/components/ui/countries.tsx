@@ -11,8 +11,6 @@ export const Countries = () => {
     setCountries(parsedData);
   }, []);
 
-  console.log(countries.map((c: any, i: any) => c.image));
-
   return (
     <>
       <div className="container flex flex-col items-center justify-center bg-[#FAFAFA] pb-[180px] pt-[160px] md:pt-[80px]">
