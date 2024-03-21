@@ -28,7 +28,7 @@ export default function Home() {
         <div
           className="container grid grid-cols-2 gap-[100px] pt-[152px] md:flex md:flex-col md:pt-[92px]"
           style={{
-            backgroundImage: "url(/vector2.png)",
+            backgroundImage: "url(/Vector2.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
