@@ -49,7 +49,7 @@ export default function SwiperEvents() {
           }}
           className="mt-[48px] flex flex-row justify-center gap-[24px] !p-[4px] md:mt-0 md:grid md:grid-cols-2 md:gap-[12px] md:text-pretty md:px-[24px]"
         >
-          {events.slice(0, 6).map((event: any, i) => (
+          {events.slice(0, 6)?.map((event: any, i) => (
             <SwiperSlide
               key={i}
               className="shadow-left relative flex h-auto max-w-[356px] flex-col items-center justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[400px] md:max-w-[234px]"

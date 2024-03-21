@@ -19,7 +19,7 @@ export const Insights = () => {
   return (
     <>
       <div className="mx-[114px] flex w-[100%] flex-row justify-center gap-[36px] md:mx-[24px] md:gap-[12px]">
-        {news.slice(0, numberOfInsightsToShow).map((content: any, i) => (
+        {news.slice(0, numberOfInsightsToShow)?.map((content: any, i) => (
           <div key={i} className="max-w-[348px]">
             <div className="flex flex-col">
               <div className="max-w-[348px]">

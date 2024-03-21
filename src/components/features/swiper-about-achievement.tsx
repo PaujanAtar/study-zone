@@ -49,7 +49,7 @@ export default function SwiperAboutAchievement() {
           }}
           className="mt-[48px] flex flex-row justify-center gap-[24px] !p-[4px]"
         >
-          {achievements.map((achievement: any, i) => (
+          {achievements?.map((achievement: any, i) => (
             <SwiperSlide
               key={i}
               className="shadow-left relative flex max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[224px] md:max-w-[160px] md:rounded-[12px]"

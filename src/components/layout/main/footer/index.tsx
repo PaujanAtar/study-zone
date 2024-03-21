@@ -83,7 +83,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-[12px]">
             <h1 className="text-xl font-medium">Contact Us</h1>
-            {navigations.map((nav, i) => (
+            {navigations?.map((nav, i) => (
               <Link key={i} href={nav.link}>
                 {nav.name}
               </Link>

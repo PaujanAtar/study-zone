@@ -25,7 +25,7 @@ export const Services = () => {
           </h3>
         </div>
         <div className="mt-[48px] grid grid-cols-4 gap-[24px] md:grid-cols-2 md:gap-[12px]">
-          {services.map((service: any, i: any) => (
+          {services?.map((service: any, i: any) => (
             <Link
               key={i}
               href={`/services/${service.link}`}

@@ -60,7 +60,7 @@ const ServicesPage = () => {
               </h3>
             </div>
             <div className="mt-[48px] grid grid-cols-4 gap-[24px] md:grid-cols-2 md:gap-[12px]">
-              {services.map((service: any, i: number) => (
+              {services?.map((service: any, i: number) => (
                 <Link
                   key={i}
                   href={`/services/${service.link}`}
@@ -104,7 +104,7 @@ const ServicesPage = () => {
               </div>
               <div className="relative flex flex-row justify-center">
                 <div className="mb-[120px] mt-[-180px] grid grid-cols-3 justify-center gap-[24px] md:mb-0 md:grid-cols-2 md:px-[24px]">
-                  {steps.map((step: any, i: number) => (
+                  {steps?.map((step: any, i: number) => (
                     <div
                       key={i}
                       className={`shadow-left relative flex h-[496px] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-auto md:max-w-[160px] md:rounded-[12px] ${i === 6 ? "middle-card" : ""} ${
@@ -160,7 +160,7 @@ const ServicesPage = () => {
             </div>
             <div className="container">
               <div className="mb-[120px] mt-[-850px] flex flex-col items-center gap-[48px] md:mt-[-1000px]">
-                {faqs.map((faq: any, i: number) => (
+                {faqs?.map((faq: any, i: number) => (
                   <FAQItem key={i} faq={faq} />
                 ))}
               </div>

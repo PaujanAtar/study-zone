@@ -45,7 +45,7 @@ const EventPage = () => {
           </div>
           <div className="relative mt-[-250px] flex flex-row justify-center md:mt-[-200px]">
             <div className="mb-[120px] mt-[48px] grid grid-cols-3 justify-center gap-[24px] md:grid-cols-2 md:gap-[12px] md:text-pretty md:px-[24px]">
-              {events.map((event: any, i) => (
+              {events?.map((event: any, i) => (
                 <div
                   key={i}
                   className="shadow-left relative flex h-[400px] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-auto"

@@ -340,7 +340,7 @@ const CountryDetails = () => {
             </h3>
           </div>
           <div className="container grid grid-cols-6 gap-[24px]">
-            {universities.map((university: any, i) => (
+            {universities?.map((university: any, i) => (
               <div
                 key={i}
                 className="flex justify-center px-[55px] py-[24px] md:px-0"

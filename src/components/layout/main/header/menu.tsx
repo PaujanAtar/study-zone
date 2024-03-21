@@ -35,7 +35,7 @@ const Menu = ({ setVis }: any) => {
 
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-10">
-              {navigations.map((nav, i) => (
+              {navigations?.map((nav, i) => (
                 <Link key={i} href={`/${nav.link}`}>
                   {nav.name}
                 </Link>

@@ -26,7 +26,7 @@ const DashboardSidebar = () => {
         </button>
       </div>
       <div className="m-6 flex flex-col gap-1">
-        {pages.map((page, i) => (
+        {pages?.map((page, i) => (
           <Link
             key={i}
             href={page.link}

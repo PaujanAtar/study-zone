@@ -47,7 +47,7 @@ export default function SwiperAboutCareer() {
           }}
           className="mx-[90px] mt-[-60px] flex w-[100%] flex-row justify-center gap-[24px] !p-[4px] md:mt-[-120px] md:gap-[12px]"
         >
-          {careers.map((career: any, i) => (
+          {careers?.map((career: any, i) => (
             <SwiperSlide
               key={i}
               className="shadow-left flex w-[100%] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FEDB99]"

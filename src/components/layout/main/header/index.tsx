@@ -52,7 +52,7 @@ const Navbar = ({ setVis }: any) => {
         {/* ----------------------------------------------------------------------------------------- */}
 
         <div className="header-hidden flex flex-row gap-[20px] font-medium">
-          {navigations.map((nav) => (
+          {navigations?.map((nav) => (
             <div className="flex flex-row text-sm" key={nav.link}>
               {nav.hasImage ? (
                 <div className="flex flex-row">

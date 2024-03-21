@@ -21,7 +21,7 @@ const Insights = () => {
             Stay Updated
           </h1>
           <div className="grid grid-cols-3 justify-center gap-[36px] md:grid-cols-2">
-            {news.map((content: any, i) => (
+            {news?.map((content: any, i) => (
               <div key={i} className="max-w-[348px]">
                 <div className="flex flex-col">
                   <div className="max-w-[348px]">
@@ -53,7 +53,7 @@ const Insights = () => {
             ))}
           </div>
           <div className="flex flex-row justify-center gap-[8px]">
-            {news.map((carousel, i) => (
+            {news?.map((carousel, i) => (
               <div
                 key={i}
                 className="mb-[120px] mt-[24px] h-[8px] w-[8px] rounded-full bg-[#E67026]"

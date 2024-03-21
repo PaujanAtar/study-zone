@@ -77,7 +77,7 @@ const AboutUs = () => {
           <div className="mx-auto mb-[160px] mt-[-650px] grid w-[100%] max-w-[1116px] grid-cols-3 justify-center gap-[24px] px-[162px] md:mb-[80px] md:mt-[-280px] md:grid-cols-2 md:px-[24px]">
             {profiles
               .slice(0, numberOfProfilesToShow)
-              .map((profile: any, i: number) => (
+              ?.map((profile: any, i: number) => (
                 <div
                   key={i}
                   className={`btn-white shadow-left flex max-w-[356px] flex-col rounded-[12px] border-2 border-[#000000] md:max-h-[220px] md:max-w-[160px] ${

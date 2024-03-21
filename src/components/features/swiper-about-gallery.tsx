@@ -47,7 +47,7 @@ export default function SwiperAboutGallery() {
           }}
           className="mt-[48px] flex flex-row justify-center gap-[24px] !p-[4px] md:gap-[12px]"
         >
-          {galleries.map((gallery: any, i) => (
+          {galleries?.map((gallery: any, i) => (
             <SwiperSlide key={i}>
               <Image
                 src={gallery.image}

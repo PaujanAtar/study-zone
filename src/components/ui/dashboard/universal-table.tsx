@@ -18,7 +18,7 @@ const UniversalTable = ({
     const storedData = localStorage.getItem(localStorageKey);
     const parsedData = storedData ? JSON.parse(storedData) : {};
     setItems(parsedData);
-  }, []);
+  }, [localStorageKey]);
 
   const keys = Object.keys(items[0] || {});
 
@@ -34,7 +34,7 @@ const UniversalTable = ({
   };
 
   const handleSaveEdit = (editedItem: any) => {
-    const updatedItems = items.map((item) =>
+    const updatedItems = items?.map((item) =>
       item.id === editedItem.id ? editedItem : item,
     );
     setItems(updatedItems);
@@ -62,7 +62,7 @@ const UniversalTable = ({
             <table className="w-full table-auto border">
               <thead className="border">
                 <tr>
-                  {keys.map((key: any) => (
+                  {keys?.map((key: any) => (
                     <th key={key} className="border px-4 py-5">
                       {key}
                     </th>
@@ -71,9 +71,9 @@ const UniversalTable = ({
                 </tr>
               </thead>
               <tbody>
-                {items.map((item: any, i: any) => (
+                {items?.map((item: any, i: any) => (
                   <tr key={item.id}>
-                    {keys.map((key: any) => (
+                    {keys?.map((key: any) => (
                       <td key={key} className="border px-4 py-5 text-center">
                         {item[key]}
                       </td>

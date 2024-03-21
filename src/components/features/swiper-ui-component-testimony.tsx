@@ -47,7 +47,7 @@ export default function SwiperTestimony() {
           }}
           className="ml-[10px] flex flex-row gap-[24px] md:mx-5 md:w-full md:justify-center"
         >
-          {testimonies.map((testimony: any, i) => (
+          {testimonies?.map((testimony: any, i) => (
             <SwiperSlide
               key={i}
               className="btn-white shadow-left flex h-[395px] max-w-[270px] flex-col rounded-[12px]"
