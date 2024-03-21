@@ -3,10 +3,16 @@ import Link from "next/link";
 import MainLayout from "@/components/layout/main";
 import { AskBanner } from "@/components/ui/ask-banner";
 import useScreenWidth from "@/hooks/useScreenWidth";
-import data from "@/data/pages/english-test-tests.json";
+import { useState, useEffect } from "react";
 
 const EnglishTest = () => {
-  const tests = data;
+  const [tests, setTests] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("EnglishTests");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setTests(parsedData);
+  }, []);
 
   const screenWidth = useScreenWidth();
 
@@ -39,7 +45,7 @@ const EnglishTest = () => {
             </div>
             <div className="relative mb-[120px] flex flex-row justify-center">
               <div className="mx-[90px] mt-[-60px] grid w-[100%] grid-cols-3 justify-center gap-[24px] md:mx-[24px] md:mt-[-180px] md:grid-cols-2 md:gap-[12px]">
-                {tests.map((test, i) => (
+                {tests.map((test: any, i) => (
                   <div
                     key={i}
                     className={`shadow-left flex w-[100%] max-w-[400px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] ${

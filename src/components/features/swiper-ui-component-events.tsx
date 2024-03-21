@@ -5,10 +5,16 @@ import useScreenWidth from "@/hooks/useScreenWidth";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Navigation, FreeMode, Pagination } from "swiper/modules";
-import data from "@/data/feature/swiper-ui-component-events.json";
+import { useState, useEffect } from "react";
 
 export default function SwiperEvents() {
-  const events = data;
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("EventEvents");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setEvents(parsedData);
+  }, []);
 
   const screenWidth = useScreenWidth();
 
@@ -43,7 +49,7 @@ export default function SwiperEvents() {
           }}
           className="mt-[48px] flex flex-row justify-center gap-[24px] !p-[4px] md:mt-0 md:grid md:grid-cols-2 md:gap-[12px] md:text-pretty md:px-[24px]"
         >
-          {events.map((event, i) => (
+          {events.slice(0, 6).map((event: any, i) => (
             <SwiperSlide
               key={i}
               className="shadow-left relative flex h-auto max-w-[356px] flex-col items-center justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[400px] md:max-w-[234px]"

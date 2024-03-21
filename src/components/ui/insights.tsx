@@ -1,19 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import useScreenWidth from "@/hooks/useScreenWidth";
-import data from "@/data//ui/ui-insights-component.json";
+import { useState, useEffect } from "react";
 
 export const Insights = () => {
-  const news = data;
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("InsightNews");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setNews(parsedData);
+  }, []);
 
   const screenWidth = useScreenWidth();
 
-  const numberOfInsightsToShow = screenWidth < 769 ? 2 : news.length;
+  const numberOfInsightsToShow = screenWidth < 769 ? 2 : 3;
 
   return (
     <>
       <div className="mx-[114px] flex w-[100%] flex-row justify-center gap-[36px] md:mx-[24px] md:gap-[12px]">
-        {news.slice(0, numberOfInsightsToShow).map((content, i) => (
+        {news.slice(0, numberOfInsightsToShow).map((content: any, i) => (
           <div key={i} className="max-w-[348px]">
             <div className="flex flex-col">
               <div className="max-w-[348px]">

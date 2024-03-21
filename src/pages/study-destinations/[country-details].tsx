@@ -5,10 +5,17 @@ import { Testimony } from "@/components/ui/testimony";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import data from "@/data/pages/study-destinations-universities.json";
+import { useState, useEffect } from "react";
 
 const CountryDetails = () => {
-  const universities = data;
+  const [universities, setUniversities] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("Universities");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setUniversities(parsedData);
+  }, []);
+
   return (
     <>
       <MainLayout>
@@ -130,7 +137,6 @@ const CountryDetails = () => {
           <h1 className="text-[40px] font-semibold text-[#191919]">
             Cost of Studying in Australia
           </h1>
-
           <div>
             <table className="table-auto border">
               <thead className="border">
@@ -334,7 +340,7 @@ const CountryDetails = () => {
             </h3>
           </div>
           <div className="container grid grid-cols-6 gap-[24px]">
-            {universities.map((university, i) => (
+            {universities.map((university: any, i) => (
               <div
                 key={i}
                 className="flex justify-center px-[55px] py-[24px] md:px-0"

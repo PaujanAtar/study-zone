@@ -5,10 +5,16 @@ import useScreenWidth from "@/hooks/useScreenWidth";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Navigation, FreeMode, Pagination } from "swiper/modules";
-import data from "@/data/feature/swiper-about-achievment.json";
+import { useState, useEffect } from "react";
 
 export default function SwiperAboutAchievement() {
-  const achievements = data;
+  const [achievements, setAchievements] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("AchievementSwiper");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setAchievements(parsedData);
+  }, []);
 
   const screenWidth = useScreenWidth();
 
@@ -43,14 +49,14 @@ export default function SwiperAboutAchievement() {
           }}
           className="mt-[48px] flex flex-row justify-center gap-[24px] !p-[4px]"
         >
-          {achievements.map((achievement, i) => (
+          {achievements.map((achievement: any, i) => (
             <SwiperSlide
               key={i}
               className="shadow-left relative flex max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[224px] md:max-w-[160px] md:rounded-[12px]"
             >
               <div className="flex flex-col p-[24px]">
                 <Image
-                  src={achievement}
+                  src={achievement.image}
                   alt="achievement"
                   width={270}
                   height={394}

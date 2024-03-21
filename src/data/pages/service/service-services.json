@@ -1,40 +1,48 @@
 [
     {
+        "id": 1,
         "service": "Education Consultation",
         "image": "/EducationConsultation.png",
         "link": "education-consultation"
     },
     {
+        "id": 2,
         "service": "Student Accommodation",
         "image": "/StudentAccommodation.png",
         "link": "student-accommodation"
     },
     {
+        "id": 3,
         "service": "Student Health Insurance",
         "image": "/StudentHealthInsurance.png",
         "link": "student-health-insurance"
     },
     {
+        "id": 4,
         "service": "Student & Tourist Visa",
         "image": "/StudentandTouristVisa.png",
         "link": "student-tourist-visa"
     },
     {
+        "id": 5,
         "service": "Travel Arrangement",
         "image": "/TravelArrangement.png",
         "link": "education-consultation"
     },
     {
+        "id": 6,
         "service": "English Test",
         "image": "/EnglishTests.png",
         "link": "english-test"
     },
     {
+        "id": 7,
         "service": "Scholarship",
         "image": "/Scholarship.png",
         "link": "scholarship"
     },
     {
+        "id": 8,
         "service": "Document Translation",
         "image": "/DocumentTranslation.png",
         "link": "document-translation"

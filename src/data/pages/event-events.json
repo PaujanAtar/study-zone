@@ -1,30 +1,54 @@
 [
     {
+        "id": 1,
         "title": "Travel Arrangement",
         "image": "/events.png",
         "link": "/travel-arrangement"
     },
     {
+        "id": 2,
         "title": "English Test",
         "image": "/events.png",
         "link": "/english-test"
     },
     {
+        "id": 3,
         "title": "Scholarship",
         "image": "/events.png",
         "link": "/scholarship"
     },
     {
+        "id": 4,
         "title": "Travel Arrangement",
         "image": "/events.png",
         "link": "/travel-arrangement"
     },
     {
+        "id": 5,
         "title": "English Test",
         "image": "/events.png",
         "link": "/english-test"
     },
     {
+        "id": 6,
+        "title": "Scholarship",
+        "image": "/events.png",
+        "link": "/scholarship"
+    },
+    {
+        "id": 7,
+        "title": "Travel Arrangement",
+        "image": "/events.png",
+        "link": "/travel-arrangement"
+    },
+    {
+        "id": 8,
+        "title": "English Test",
+        "image": "/events.png",
+        "link": "/english-test"
+    },
+    {
+        "id": 9,
         "title": "Scholarship",
         "image": "/events.png",
         "link": "/scholarship"

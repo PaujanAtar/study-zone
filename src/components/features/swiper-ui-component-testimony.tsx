@@ -3,10 +3,16 @@ import Image from "next/image";
 import "swiper/css";
 import useScreenWidth from "@/hooks/useScreenWidth";
 import { Navigation, FreeMode, Pagination } from "swiper/modules";
-import data from "@/data/feature/swiper-ui-component-testimony.json";
+import { useState, useEffect } from "react";
 
 export default function SwiperTestimony() {
-  const testimonies = data;
+  const [testimonies, setTestimonies] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("TestimonySwiper");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setTestimonies(parsedData);
+  }, []);
 
   const screenWidth = useScreenWidth();
 
@@ -41,7 +47,7 @@ export default function SwiperTestimony() {
           }}
           className="ml-[10px] flex flex-row gap-[24px] md:mx-5 md:w-full md:justify-center"
         >
-          {testimonies.map((testimony, i) => (
+          {testimonies.map((testimony: any, i) => (
             <SwiperSlide
               key={i}
               className="btn-white shadow-left flex h-[395px] max-w-[270px] flex-col rounded-[12px]"

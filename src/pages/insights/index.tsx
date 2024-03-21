@@ -2,10 +2,16 @@ import MainLayout from "@/components/layout/main";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import data from "@/data/pages/insight-news.json";
+import { useState, useEffect } from "react";
 
 const Insights = () => {
-  const news = data;
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("InsightNews");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setNews(parsedData);
+  }, []);
 
   return (
     <>
@@ -15,7 +21,7 @@ const Insights = () => {
             Stay Updated
           </h1>
           <div className="grid grid-cols-3 justify-center gap-[36px] md:grid-cols-2">
-            {news.map((content, i) => (
+            {news.map((content: any, i) => (
               <div key={i} className="max-w-[348px]">
                 <div className="flex flex-col">
                   <div className="max-w-[348px]">

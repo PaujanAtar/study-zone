@@ -8,11 +8,17 @@ import { Events } from "@/components/ui/events";
 import { Ask } from "@/components/ui/ask";
 import { Testimony } from "@/components/ui/testimony";
 import { AskBanner } from "@/components/ui/ask-banner";
+import dataLoader from "@/data/loader";
+import { useEffect } from "react";
 
 export default function Home() {
   const screenWidth = useScreenWidth();
 
   const formWidth = screenWidth < 1100 ? "max-w-[372px]" : "w-[372px]";
+
+  useEffect(() => {
+    dataLoader();
+  }, []);
 
   return (
     <MainLayout>

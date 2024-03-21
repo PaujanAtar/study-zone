@@ -1,32 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import SwiperEvents from "../features/swiper-ui-component-events";
 import useScreenWidth from "@/hooks/useScreenWidth";
-import data from "@/data//ui/ui-events-component.json";
 
 export const Events = () => {
-  const events = data;
-
   const screenWidth = useScreenWidth();
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? events.length - 1 : prevIndex - 1,
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 3
-        ? 0
-        : prevIndex === events.length - 1
-          ? prevIndex
-          : prevIndex + 1,
-    );
-  };
-
-  const numberOfEventsToShow = screenWidth < 769 ? 2 : 3;
   const containerClassName = screenWidth < 769 ? "no-container" : "container";
 
   return (

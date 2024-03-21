@@ -4,10 +4,16 @@ import useScreenWidth from "@/hooks/useScreenWidth";
 import "swiper/css";
 import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper/modules";
-import data from "@/data/feature/swiper-about-galleries.json";
+import { useState, useEffect } from "react";
 
 export default function SwiperAboutGallery() {
-  const galleries = data;
+  const [galleries, setGalleries] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("GallerySwiper");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setGalleries(parsedData);
+  }, []);
 
   const screenWidth = useScreenWidth();
 
@@ -41,10 +47,10 @@ export default function SwiperAboutGallery() {
           }}
           className="mt-[48px] flex flex-row justify-center gap-[24px] !p-[4px] md:gap-[12px]"
         >
-          {galleries.map((gallery, i) => (
+          {galleries.map((gallery: any, i) => (
             <SwiperSlide key={i}>
               <Image
-                src={gallery}
+                src={gallery.image}
                 alt="gallery"
                 width={318}
                 height={220}

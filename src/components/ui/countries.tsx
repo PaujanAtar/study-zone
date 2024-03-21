@@ -1,9 +1,15 @@
 import React from "react";
 import Link from "next/link";
-import data from "@/data/ui/ui-countries-component.json";
+import { useState, useEffect } from "react";
 
 export const Countries = () => {
-  const countries = data;
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("CountriesComponent");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setCountries(parsedData);
+  }, []);
 
   return (
     <>
@@ -18,7 +24,7 @@ export const Countries = () => {
           </h3>
         </div>
         <div className="mt-[48px] grid grid-cols-4 gap-[24px] md:grid-cols-1">
-          {countries.map((country, i) => (
+          {countries.map((country: any, i) => (
             <Link
               href={`/study-destinations/${country.link.toLowerCase()}`}
               style={{

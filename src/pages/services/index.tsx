@@ -7,14 +7,26 @@ import Image from "next/image";
 import Link from "next/link";
 import useScreenWidth from "@/hooks/useScreenWidth";
 import FAQItem from "@/components/ui/faq-function";
-import data from "@/data/pages/service-data.json";
+import { useState, useEffect } from "react";
 
 const ServicesPage = () => {
-  const services = data.services;
+  const [services, setServices] = useState<any[]>([]);
+  const [steps, setSteps] = useState<any[]>([]);
+  const [faqs, setFaqs] = useState<any[]>([]);
 
-  const steps = data.steps;
+  useEffect(() => {
+    const storedServices = localStorage.getItem("ServiceServices");
+    const parsedServices = storedServices ? JSON.parse(storedServices) : {};
 
-  const faqs = data.faqs;
+    const storedSteps = localStorage.getItem("ServiceSteps");
+    const parsedSteps = storedSteps ? JSON.parse(storedSteps) : {};
+
+    const storedFaqs = localStorage.getItem("ServiceFaqs");
+    const parsedFaqs = storedFaqs ? JSON.parse(storedFaqs) : {};
+    setServices(parsedServices);
+    setSteps(parsedSteps);
+    setFaqs(parsedFaqs);
+  }, []);
 
   const screenWidth = useScreenWidth();
 
@@ -48,7 +60,7 @@ const ServicesPage = () => {
               </h3>
             </div>
             <div className="mt-[48px] grid grid-cols-4 gap-[24px] md:grid-cols-2 md:gap-[12px]">
-              {services.map((service, i) => (
+              {services.map((service: any, i: number) => (
                 <Link
                   key={i}
                   href={`/services/${service.link}`}
@@ -92,7 +104,7 @@ const ServicesPage = () => {
               </div>
               <div className="relative flex flex-row justify-center">
                 <div className="mb-[120px] mt-[-180px] grid grid-cols-3 justify-center gap-[24px] md:mb-0 md:grid-cols-2 md:px-[24px]">
-                  {steps.map((step, i) => (
+                  {steps.map((step: any, i: number) => (
                     <div
                       key={i}
                       className={`shadow-left relative flex h-[496px] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-auto md:max-w-[160px] md:rounded-[12px] ${i === 6 ? "middle-card" : ""} ${
@@ -148,8 +160,8 @@ const ServicesPage = () => {
             </div>
             <div className="container">
               <div className="mb-[120px] mt-[-850px] flex flex-col items-center gap-[48px] md:mt-[-1000px]">
-                {faqs.map((faq, index) => (
-                  <FAQItem key={index} faq={faq} />
+                {faqs.map((faq: any, i: number) => (
+                  <FAQItem key={i} faq={faq} />
                 ))}
               </div>
             </div>

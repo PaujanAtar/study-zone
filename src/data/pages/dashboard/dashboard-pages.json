@@ -1,0 +1,9 @@
+[
+  { "id": 1, "link": "/dashboard/homepage-dashboard", "title": "Homepage" },
+  { "id": 2, "link": "/dashboard/about-us-dashboard", "title": "About Us" },
+  { "id": 3, "link": "/dashboard/english-test-dashboard", "title": "English Tests" },
+  { "id": 4, "link": "/dashboard/events-dashboard", "title": "Events" },
+  { "id": 5, "link": "/dashboard/insights-dashboard", "title": "Insights" },
+  { "id": 6, "link": "/dashboard/services-dashboard", "title": "Services" },
+  { "id": 7, "link": "/dashboard/study-destination-dashboard", "title": "Study Destinations" }
+]

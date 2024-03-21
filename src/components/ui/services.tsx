@@ -1,10 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import data from "@/data/ui/ui-services-component.json";
+import { useState, useEffect } from "react";
 
 export const Services = () => {
-  const services = data;
+  const [services, setServices] = useState<any[]>([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("ServiceServices");
+    const parsedData = storedData ? JSON.parse(storedData) : {};
+    setServices(parsedData);
+  }, []);
 
   return (
     <>
@@ -19,7 +25,7 @@ export const Services = () => {
           </h3>
         </div>
         <div className="mt-[48px] grid grid-cols-4 gap-[24px] md:grid-cols-2 md:gap-[12px]">
-          {services.map((service, i) => (
+          {services.map((service: any, i: any) => (
             <Link
               key={i}
               href={`/services/${service.link}`}
