@@ -340,23 +340,24 @@ const CountryDetails = () => {
             </h3>
           </div>
           <div className="container grid grid-cols-6 gap-[24px]">
-            {universities?.map((university: any, i) => (
-              <div
-                key={i}
-                className="flex justify-center px-[55px] py-[24px] md:px-0"
-              >
-                <Link
-                  href={`/study-destinations/university/${university.title}`}
+            {Array.isArray(universities) &&
+              universities?.map((university: any, i) => (
+                <div
+                  key={i}
+                  className="flex justify-center px-[55px] py-[24px] md:px-0"
                 >
-                  <Image
-                    src={university.image}
-                    alt={university.title}
-                    width={94}
-                    height={48}
-                  />
-                </Link>
-              </div>
-            ))}
+                  <Link
+                    href={`/study-destinations/university/${university.title}`}
+                  >
+                    <Image
+                      src={university.image}
+                      alt={university.title}
+                      width={94}
+                      height={48}
+                    />
+                  </Link>
+                </div>
+              ))}
           </div>
         </div>
 

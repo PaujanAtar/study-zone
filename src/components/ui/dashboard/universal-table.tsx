@@ -34,9 +34,9 @@ const UniversalTable = ({
   };
 
   const handleSaveEdit = (editedItem: any) => {
-    const updatedItems = items?.map((item) =>
-      item.id === editedItem.id ? editedItem : item,
-    );
+    const updatedItems =
+      items &&
+      items.map((item) => (item.id === editedItem.id ? editedItem : item));
     setItems(updatedItems);
 
     // Update the specific dataset in localStorage with the updated items
@@ -62,28 +62,34 @@ const UniversalTable = ({
             <table className="w-full table-auto border">
               <thead className="border">
                 <tr>
-                  {keys?.map((key: any) => (
-                    <th key={key} className="border px-4 py-5">
-                      {key}
-                    </th>
-                  ))}
+                  {Array.isArray(keys) &&
+                    keys?.map((key: any) => (
+                      <th key={key} className="border px-4 py-5">
+                        {key}
+                      </th>
+                    ))}
                   <th className="w-10 border px-4 py-5">Action</th>
                 </tr>
               </thead>
               <tbody>
-                {items?.map((item: any, i: any) => (
-                  <tr key={item.id}>
-                    {keys?.map((key: any) => (
-                      <td key={key} className="border px-4 py-5 text-center">
-                        {item[key]}
+                {Array.isArray(items) &&
+                  items?.map((item: any, i: any) => (
+                    <tr key={item.id}>
+                      {Array.isArray(keys) &&
+                        keys?.map((key: any) => (
+                          <td
+                            key={key}
+                            className="border px-4 py-5 text-center"
+                          >
+                            {item[key]}
+                          </td>
+                        ))}
+                      <td className="w-10 border px-4 py-5 text-center">
+                        <button onClick={() => handleEdit(item)}>Edit</button>
+                        <button onClick={() => handleRemove(i)}>Remove</button>
                       </td>
-                    ))}
-                    <td className="w-10 border px-4 py-5 text-center">
-                      <button onClick={() => handleEdit(item)}>Edit</button>
-                      <button onClick={() => handleRemove(i)}>Remove</button>
-                    </td>
-                  </tr>
-                ))}
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>

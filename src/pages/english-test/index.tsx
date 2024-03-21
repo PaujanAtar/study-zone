@@ -45,26 +45,29 @@ const EnglishTest = () => {
             </div>
             <div className="relative mb-[120px] flex flex-row justify-center">
               <div className="mx-[90px] mt-[-60px] grid w-[100%] grid-cols-3 justify-center gap-[24px] md:mx-[24px] md:mt-[-180px] md:grid-cols-2 md:gap-[12px]">
-                {tests?.map((test: any, i) => (
-                  <div
-                    key={i}
-                    className={`shadow-left flex w-[100%] max-w-[400px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] ${
-                      i === 2 ? "md:col-span-2 md:mx-auto md:max-w-[250px]" : ""
-                    }`}
-                  >
-                    <div className="flex flex-col px-[16px] pb-[24px] pt-[16px]">
-                      <h1 className="mt-[12px] text-2xl font-semibold text-[#191919]">
-                        {test.title}
-                      </h1>
-                      <Link
-                        href={`/english-test/${test.title.toLowerCase()}`}
-                        className="mt-[24px] text-base font-medium text-[#7D1418]"
-                      >
-                        See Details
-                      </Link>
+                {Array.isArray(tests) &&
+                  tests?.map((test: any, i) => (
+                    <div
+                      key={i}
+                      className={`shadow-left flex w-[100%] max-w-[400px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] ${
+                        i === 2
+                          ? "md:col-span-2 md:mx-auto md:max-w-[250px]"
+                          : ""
+                      }`}
+                    >
+                      <div className="flex flex-col px-[16px] pb-[24px] pt-[16px]">
+                        <h1 className="mt-[12px] text-2xl font-semibold text-[#191919]">
+                          {test.title}
+                        </h1>
+                        <Link
+                          href={`/english-test/${test.title.toLowerCase()}`}
+                          className="mt-[24px] text-base font-medium text-[#7D1418]"
+                        >
+                          See Details
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           </div>

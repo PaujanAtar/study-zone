@@ -47,17 +47,18 @@ export default function SwiperAboutGallery() {
           }}
           className="mt-[48px] flex flex-row justify-center gap-[24px] !p-[4px] md:gap-[12px]"
         >
-          {galleries?.map((gallery: any, i) => (
-            <SwiperSlide key={i}>
-              <Image
-                src={gallery.image}
-                alt="gallery"
-                width={318}
-                height={220}
-                className="shadow-left h-[220px] rounded-[12px] border-2 border-[#000000] object-cover md:h-[112px]"
-              />
-            </SwiperSlide>
-          ))}
+          {Array.isArray(galleries) &&
+            galleries?.map((gallery: any, i) => (
+              <SwiperSlide key={i}>
+                <Image
+                  src={gallery.image}
+                  alt="gallery"
+                  width={318}
+                  height={220}
+                  className="shadow-left h-[220px] rounded-[12px] border-2 border-[#000000] object-cover md:h-[112px]"
+                />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
       <div

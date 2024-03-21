@@ -60,26 +60,27 @@ const ServicesPage = () => {
               </h3>
             </div>
             <div className="mt-[48px] grid grid-cols-4 gap-[24px] md:grid-cols-2 md:gap-[12px]">
-              {services?.map((service: any, i: number) => (
-                <Link
-                  key={i}
-                  href={`/services/${service.link}`}
-                  className="shadow-left relative flex h-auto max-w-[318px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[236px] md:max-w-[160px]"
-                >
-                  <div className="flex w-full flex-col items-center px-[16px] pb-[48px] pt-[16px]">
-                    <Image
-                      src={service.image}
-                      alt="Service"
-                      width={240}
-                      height={286}
-                      className="w-full rounded-[12px] object-cover"
-                    />
-                    <h1 className="mt-[24px] text-center text-2xl font-semibold text-[#191919] md:break-normal md:break-all md:text-base">
-                      {service.service}
-                    </h1>
-                  </div>
-                </Link>
-              ))}
+              {Array.isArray(services) &&
+                services?.map((service: any, i: number) => (
+                  <Link
+                    key={i}
+                    href={`/services/${service.link}`}
+                    className="shadow-left relative flex h-auto max-w-[318px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[236px] md:max-w-[160px]"
+                  >
+                    <div className="flex w-full flex-col items-center px-[16px] pb-[48px] pt-[16px]">
+                      <Image
+                        src={service.image}
+                        alt="Service"
+                        width={240}
+                        height={286}
+                        className="w-full rounded-[12px] object-cover"
+                      />
+                      <h1 className="mt-[24px] text-center text-2xl font-semibold text-[#191919] md:break-normal md:break-all md:text-base">
+                        {service.service}
+                      </h1>
+                    </div>
+                  </Link>
+                ))}
             </div>
           </div>
 
@@ -104,37 +105,38 @@ const ServicesPage = () => {
               </div>
               <div className="relative flex flex-row justify-center">
                 <div className="mb-[120px] mt-[-180px] grid grid-cols-3 justify-center gap-[24px] md:mb-0 md:grid-cols-2 md:px-[24px]">
-                  {steps?.map((step: any, i: number) => (
-                    <div
-                      key={i}
-                      className={`shadow-left relative flex h-[496px] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-auto md:max-w-[160px] md:rounded-[12px] ${i === 6 ? "middle-card" : ""} ${
-                        i === 0 ? "ml-auto" : ""
-                      } ${i === 6 ? "md:col-span-2 md:mx-auto" : ""}`}
-                    >
-                      <div className="flex flex-col px-[16px] pb-[48px] pt-[16px] md:px-[8px] md:pb-[16px] md:pt-[8px]">
-                        <div className="flex max-w-[324] flex-col items-center">
-                          <Image
-                            src={step.image}
-                            alt="step"
-                            width={240}
-                            height={286}
-                            className="w-full rounded-[12px] object-cover md:rounded-[8px]"
-                          />
-                        </div>
-                        <div className="mt-[24px] h-[60px] w-[60px] rounded-full border-4 border-[#427969] bg-[#337362] p-[12px] text-center md:mt-[12px] md:h-[36px] md:w-[36px] md:p-[8px]">
-                          <h1 className="text-xl font-semibold text-[#FFFFFF] md:text-xs">
-                            {i + 1}
+                  {Array.isArray(steps) &&
+                    steps?.map((step: any, i: number) => (
+                      <div
+                        key={i}
+                        className={`shadow-left relative flex h-[496px] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-auto md:max-w-[160px] md:rounded-[12px] ${i === 6 ? "middle-card" : ""} ${
+                          i === 0 ? "ml-auto" : ""
+                        } ${i === 6 ? "md:col-span-2 md:mx-auto" : ""}`}
+                      >
+                        <div className="flex flex-col px-[16px] pb-[48px] pt-[16px] md:px-[8px] md:pb-[16px] md:pt-[8px]">
+                          <div className="flex max-w-[324] flex-col items-center">
+                            <Image
+                              src={step.image}
+                              alt="step"
+                              width={240}
+                              height={286}
+                              className="w-full rounded-[12px] object-cover md:rounded-[8px]"
+                            />
+                          </div>
+                          <div className="mt-[24px] h-[60px] w-[60px] rounded-full border-4 border-[#427969] bg-[#337362] p-[12px] text-center md:mt-[12px] md:h-[36px] md:w-[36px] md:p-[8px]">
+                            <h1 className="text-xl font-semibold text-[#FFFFFF] md:text-xs">
+                              {i + 1}
+                            </h1>
+                          </div>
+                          <h1 className="mt-[24px] text-2xl font-semibold text-[#001427] md:mt-[12px] md:text-base">
+                            {step.title}
                           </h1>
+                          <h2 className="mb-[24px] mt-[12px] text-xl font-normal text-[#535353] md:mt-[12px] md:text-xs">
+                            {step.description}
+                          </h2>
                         </div>
-                        <h1 className="mt-[24px] text-2xl font-semibold text-[#001427] md:mt-[12px] md:text-base">
-                          {step.title}
-                        </h1>
-                        <h2 className="mb-[24px] mt-[12px] text-xl font-normal text-[#535353] md:mt-[12px] md:text-xs">
-                          {step.description}
-                        </h2>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
             </div>
@@ -160,9 +162,10 @@ const ServicesPage = () => {
             </div>
             <div className="container">
               <div className="mb-[120px] mt-[-850px] flex flex-col items-center gap-[48px] md:mt-[-1000px]">
-                {faqs?.map((faq: any, i: number) => (
-                  <FAQItem key={i} faq={faq} />
-                ))}
+                {Array.isArray(faqs) &&
+                  faqs?.map((faq: any, i: number) => (
+                    <FAQItem key={i} faq={faq} />
+                  ))}
               </div>
             </div>
           </div>

@@ -26,15 +26,16 @@ const DashboardSidebar = () => {
         </button>
       </div>
       <div className="m-6 flex flex-col gap-1">
-        {pages?.map((page, i) => (
-          <Link
-            key={i}
-            href={page.link}
-            className={`rounded-lg p-3 hover:bg-[#FEDB99] ${router.pathname === page.link ? "bg-[#FEDB99]" : ""}`}
-          >
-            <h1 className="font-bold">{page.title}</h1>
-          </Link>
-        ))}
+        {Array.isArray(pages) &&
+          pages?.map((page, i) => (
+            <Link
+              key={i}
+              href={page.link}
+              className={`rounded-lg p-3 hover:bg-[#FEDB99] ${router.pathname === page.link ? "bg-[#FEDB99]" : ""}`}
+            >
+              <h1 className="font-bold">{page.title}</h1>
+            </Link>
+          ))}
       </div>
     </div>
   );

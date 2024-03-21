@@ -25,26 +25,27 @@ export const Services = () => {
           </h3>
         </div>
         <div className="mt-[48px] grid grid-cols-4 gap-[24px] md:grid-cols-2 md:gap-[12px]">
-          {services?.map((service: any, i: any) => (
-            <Link
-              key={i}
-              href={`/services/${service.link}`}
-              className="shadow-left relative flex h-auto max-w-[318px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[236px] md:max-w-[160px]"
-            >
-              <div className="flex w-full flex-col items-center px-[16px] pb-[48px] pt-[16px]">
-                <Image
-                  src={service.image}
-                  alt="Service"
-                  width={240}
-                  height={286}
-                  className="w-full rounded-[12px] object-cover"
-                />
-                <h1 className="mt-[24px] break-normal text-center text-2xl font-semibold text-[#191919] md:text-base">
-                  {service.service}
-                </h1>
-              </div>
-            </Link>
-          ))}
+          {Array.isArray(services) &&
+            services?.map((service: any, i: any) => (
+              <Link
+                key={i}
+                href={`/services/${service.link}`}
+                className="shadow-left relative flex h-auto max-w-[318px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[236px] md:max-w-[160px]"
+              >
+                <div className="flex w-full flex-col items-center px-[16px] pb-[48px] pt-[16px]">
+                  <Image
+                    src={service.image}
+                    alt="Service"
+                    width={240}
+                    height={286}
+                    className="w-full rounded-[12px] object-cover"
+                  />
+                  <h1 className="mt-[24px] break-normal text-center text-2xl font-semibold text-[#191919] md:text-base">
+                    {service.service}
+                  </h1>
+                </div>
+              </Link>
+            ))}
         </div>
         <div className="mt-[68px] md:mt-[48px]">
           <Link

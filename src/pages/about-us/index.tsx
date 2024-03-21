@@ -75,32 +75,33 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="mx-auto mb-[160px] mt-[-650px] grid w-[100%] max-w-[1116px] grid-cols-3 justify-center gap-[24px] px-[162px] md:mb-[80px] md:mt-[-280px] md:grid-cols-2 md:px-[24px]">
-            {profiles
-              .slice(0, numberOfProfilesToShow)
-              ?.map((profile: any, i: number) => (
-                <div
-                  key={i}
-                  className={`btn-white shadow-left flex max-w-[356px] flex-col rounded-[12px] border-2 border-[#000000] md:max-h-[220px] md:max-w-[160px] ${
-                    i === 0 ? "ml-auto" : ""
-                  } ${
-                    i === 2 ? "md:col-span-2 md:mx-auto md:max-w-[160px]" : ""
-                  }`}
-                >
-                  <Image
-                    src={profile.image}
-                    alt="person"
-                    width={356}
-                    height={356}
-                    className="rounded-t-[12px] object-cover"
-                  />
-                  <h1 className="ml-[24px] mt-[24px] text-[32px] font-semibold md:mx-[8px] md:mt-[8px] md:text-base">
-                    {profile.name}
-                  </h1>
-                  <h2 className="mb-[36px] ml-[24px] mt-[12px] text-2xl font-light md:mx-[8px] md:mb-[16px] md:mt-[8px] md:text-xs">
-                    {profile.position}
-                  </h2>
-                </div>
-              ))}
+            {Array.isArray(profiles) &&
+              profiles
+                .slice(0, numberOfProfilesToShow)
+                ?.map((profile: any, i: number) => (
+                  <div
+                    key={i}
+                    className={`btn-white shadow-left flex max-w-[356px] flex-col rounded-[12px] border-2 border-[#000000] md:max-h-[220px] md:max-w-[160px] ${
+                      i === 0 ? "ml-auto" : ""
+                    } ${
+                      i === 2 ? "md:col-span-2 md:mx-auto md:max-w-[160px]" : ""
+                    }`}
+                  >
+                    <Image
+                      src={profile.image}
+                      alt="person"
+                      width={356}
+                      height={356}
+                      className="rounded-t-[12px] object-cover"
+                    />
+                    <h1 className="ml-[24px] mt-[24px] text-[32px] font-semibold md:mx-[8px] md:mt-[8px] md:text-base">
+                      {profile.name}
+                    </h1>
+                    <h2 className="mb-[36px] ml-[24px] mt-[12px] text-2xl font-light md:mx-[8px] md:mb-[16px] md:mt-[8px] md:text-xs">
+                      {profile.position}
+                    </h2>
+                  </div>
+                ))}
           </div>
         </div>
 

@@ -45,31 +45,32 @@ const EventPage = () => {
           </div>
           <div className="relative mt-[-250px] flex flex-row justify-center md:mt-[-200px]">
             <div className="mb-[120px] mt-[48px] grid grid-cols-3 justify-center gap-[24px] md:grid-cols-2 md:gap-[12px] md:text-pretty md:px-[24px]">
-              {events?.map((event: any, i) => (
-                <div
-                  key={i}
-                  className="shadow-left relative flex h-[400px] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-auto"
-                >
-                  <div className="flex flex-col px-[16px] pb-[48px] pt-[16px]">
-                    <Image
-                      src={event.image}
-                      alt="event"
-                      width={240}
-                      height={286}
-                      className="rounded-[12px] object-cover md:h-[144px] md:w-[144px]"
-                    />
-                    <h1 className="mt-[24px] text-2xl font-semibold text-[#191919] md:mt-[12px] md:text-base">
-                      {event.title}
-                    </h1>
-                    <Link
-                      href={`/events${event.link}`}
-                      className="mt-[24px] text-base font-medium text-[#7D1418] md:mt-[12px] md:text-xs"
-                    >
-                      Register Event
-                    </Link>
+              {Array.isArray(events) &&
+                events?.map((event: any, i) => (
+                  <div
+                    key={i}
+                    className="shadow-left relative flex h-[400px] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-auto"
+                  >
+                    <div className="flex flex-col px-[16px] pb-[48px] pt-[16px]">
+                      <Image
+                        src={event.image}
+                        alt="event"
+                        width={240}
+                        height={286}
+                        className="rounded-[12px] object-cover md:h-[144px] md:w-[144px]"
+                      />
+                      <h1 className="mt-[24px] text-2xl font-semibold text-[#191919] md:mt-[12px] md:text-base">
+                        {event.title}
+                      </h1>
+                      <Link
+                        href={`/events${event.link}`}
+                        className="mt-[24px] text-base font-medium text-[#7D1418] md:mt-[12px] md:text-xs"
+                      >
+                        Register Event
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </div>

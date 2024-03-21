@@ -52,49 +52,50 @@ const Navbar = ({ setVis }: any) => {
         {/* ----------------------------------------------------------------------------------------- */}
 
         <div className="header-hidden flex flex-row gap-[20px] font-medium">
-          {navigations?.map((nav) => (
-            <div className="flex flex-row text-sm" key={nav.link}>
-              {nav.hasImage ? (
-                <div className="flex flex-row">
-                  <Link
-                    className="relative flex flex-row items-center gap-[4px]"
-                    href={`/${nav.link}`}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    {nav.name}
-                    <img src="/expand_more.png" alt="Image" />
-                    {englishTestOpen && (
-                      <div
-                        onMouseLeave={handleMouseLeave}
-                        className="absolute top-[70%] mt-2 w-full rounded border border-gray-200 bg-white shadow-md"
-                      >
-                        <ul className="py-1">
-                          <Link href="/english-test/pte">
-                            <li className="cursor-pointer px-4 py-2 hover:bg-gray-100">
-                              PTE
-                            </li>
-                          </Link>
-                          <Link href="/english-test/toefl">
-                            <li className="cursor-pointer px-4 py-2 hover:bg-gray-100">
-                              TOEFL
-                            </li>
-                          </Link>
-                          <Link href="/english-test/ielts">
-                            <li className="cursor-pointer px-4 py-2 hover:bg-gray-100">
-                              IELTS
-                            </li>
-                          </Link>
-                        </ul>
-                      </div>
-                    )}
-                  </Link>
-                </div>
-              ) : (
-                <Link href={`/${nav.link}`}>{nav.name}</Link>
-              )}
-            </div>
-          ))}
+          {Array.isArray(navigations) &&
+            navigations?.map((nav) => (
+              <div className="flex flex-row text-sm" key={nav.link}>
+                {nav.hasImage ? (
+                  <div className="flex flex-row">
+                    <Link
+                      className="relative flex flex-row items-center gap-[4px]"
+                      href={`/${nav.link}`}
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {nav.name}
+                      <img src="/expand_more.png" alt="Image" />
+                      {englishTestOpen && (
+                        <div
+                          onMouseLeave={handleMouseLeave}
+                          className="absolute top-[70%] mt-2 w-full rounded border border-gray-200 bg-white shadow-md"
+                        >
+                          <ul className="py-1">
+                            <Link href="/english-test/pte">
+                              <li className="cursor-pointer px-4 py-2 hover:bg-gray-100">
+                                PTE
+                              </li>
+                            </Link>
+                            <Link href="/english-test/toefl">
+                              <li className="cursor-pointer px-4 py-2 hover:bg-gray-100">
+                                TOEFL
+                              </li>
+                            </Link>
+                            <Link href="/english-test/ielts">
+                              <li className="cursor-pointer px-4 py-2 hover:bg-gray-100">
+                                IELTS
+                              </li>
+                            </Link>
+                          </ul>
+                        </div>
+                      )}
+                    </Link>
+                  </div>
+                ) : (
+                  <Link href={`/${nav.link}`}>{nav.name}</Link>
+                )}
+              </div>
+            ))}
         </div>
 
         {/* ----------------------------------------------------------------------------------------- */}

@@ -49,22 +49,23 @@ export default function SwiperAboutAchievement() {
           }}
           className="mt-[48px] flex flex-row justify-center gap-[24px] !p-[4px]"
         >
-          {achievements?.map((achievement: any, i) => (
-            <SwiperSlide
-              key={i}
-              className="shadow-left relative flex max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[224px] md:max-w-[160px] md:rounded-[12px]"
-            >
-              <div className="flex flex-col p-[24px]">
-                <Image
-                  src={achievement.image}
-                  alt="achievement"
-                  width={270}
-                  height={394}
-                  className="w-full rounded-[12px] object-cover"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
+          {Array.isArray(achievements) &&
+            achievements?.map((achievement: any, i) => (
+              <SwiperSlide
+                key={i}
+                className="shadow-left relative flex max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[224px] md:max-w-[160px] md:rounded-[12px]"
+              >
+                <div className="flex flex-col p-[24px]">
+                  <Image
+                    src={achievement.image}
+                    alt="achievement"
+                    width={270}
+                    height={394}
+                    className="w-full rounded-[12px] object-cover"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
         </Swiper>
         <button className="prev-achievements absolute left-[-60px] top-[50%] z-40 mr-[-20px] md:hidden">
           <Image src={"/backtesti.png"} alt="backward" width={48} height={48} />

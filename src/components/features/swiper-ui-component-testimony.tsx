@@ -47,34 +47,35 @@ export default function SwiperTestimony() {
           }}
           className="ml-[10px] flex flex-row gap-[24px] md:mx-5 md:w-full md:justify-center"
         >
-          {testimonies?.map((testimony: any, i) => (
-            <SwiperSlide
-              key={i}
-              className="btn-white shadow-left flex h-[395px] max-w-[270px] flex-col rounded-[12px]"
-            >
-              <Image
-                src={testimony.image}
-                alt={`${i}`}
+          {Array.isArray(testimonies) &&
+            testimonies?.map((testimony: any, i) => (
+              <SwiperSlide
                 key={i}
-                width={270}
-                height={218}
-                className="h-[218px] max-h-[218px] rounded-t-[12px] object-cover"
-              />
-              <div className="py-[24px]">
-                <p className="mx-[12px] line-clamp-3 text-sm font-normal">
-                  {testimony.message}
-                </p>
-                <div>
-                  <h1 className="mx-[12px] pt-[24px] text-xl font-semibold">
-                    {testimony.name}
-                  </h1>
-                  <h2 className="mx-[12px] text-sm font-light">
-                    {testimony.town}
-                  </h2>
+                className="btn-white shadow-left flex h-[395px] max-w-[270px] flex-col rounded-[12px]"
+              >
+                <Image
+                  src={testimony.image}
+                  alt={`${i}`}
+                  key={i}
+                  width={270}
+                  height={218}
+                  className="h-[218px] max-h-[218px] rounded-t-[12px] object-cover"
+                />
+                <div className="py-[24px]">
+                  <p className="mx-[12px] line-clamp-3 text-sm font-normal">
+                    {testimony.message}
+                  </p>
+                  <div>
+                    <h1 className="mx-[12px] pt-[24px] text-xl font-semibold">
+                      {testimony.name}
+                    </h1>
+                    <h2 className="mx-[12px] text-sm font-light">
+                      {testimony.town}
+                    </h2>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            ))}
         </Swiper>
         <button className="prev-testimony absolute left-[-70px] top-[50%] z-40 mr-[-20px] md:hidden">
           <Image

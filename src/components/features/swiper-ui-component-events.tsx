@@ -49,31 +49,32 @@ export default function SwiperEvents() {
           }}
           className="mt-[48px] flex flex-row justify-center gap-[24px] !p-[4px] md:mt-0 md:grid md:grid-cols-2 md:gap-[12px] md:text-pretty md:px-[24px]"
         >
-          {events.slice(0, 6)?.map((event: any, i) => (
-            <SwiperSlide
-              key={i}
-              className="shadow-left relative flex h-auto max-w-[356px] flex-col items-center justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[400px] md:max-w-[234px]"
-            >
-              <div className="flex flex-col px-[16px] pb-[48px] pt-[16px]">
-                <Image
-                  src={event.image}
-                  alt="event"
-                  width={240}
-                  height={286}
-                  className="w-full rounded-[12px] object-cover md:h-[144px] md:w-full"
-                />
-                <h1 className="mt-[24px] text-2xl font-semibold text-[#191919] md:mt-[12px] md:text-base">
-                  {event.title}
-                </h1>
-                <Link
-                  href={`/events${event.link}`}
-                  className="mt-[24px] text-base font-medium text-[#7D1418] md:mt-[12px] md:text-xs"
-                >
-                  Register Event
-                </Link>
-              </div>
-            </SwiperSlide>
-          ))}
+          {Array.isArray(events) &&
+            events.slice(0, 6)?.map((event: any, i) => (
+              <SwiperSlide
+                key={i}
+                className="shadow-left relative flex h-auto max-w-[356px] flex-col items-center justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FFFBEF] md:h-[400px] md:max-w-[234px]"
+              >
+                <div className="flex flex-col px-[16px] pb-[48px] pt-[16px]">
+                  <Image
+                    src={event.image}
+                    alt="event"
+                    width={240}
+                    height={286}
+                    className="w-full rounded-[12px] object-cover md:h-[144px] md:w-full"
+                  />
+                  <h1 className="mt-[24px] text-2xl font-semibold text-[#191919] md:mt-[12px] md:text-base">
+                    {event.title}
+                  </h1>
+                  <Link
+                    href={`/events${event.link}`}
+                    className="mt-[24px] text-base font-medium text-[#7D1418] md:mt-[12px] md:text-xs"
+                  >
+                    Register Event
+                  </Link>
+                </div>
+              </SwiperSlide>
+            ))}
         </Swiper>
         <button className="prev-events absolute left-[-20px] top-[50%] z-40 mr-[-20px] md:hidden">
           <Image

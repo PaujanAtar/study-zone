@@ -47,27 +47,28 @@ export default function SwiperAboutCareer() {
           }}
           className="mx-[90px] mt-[-60px] flex w-[100%] flex-row justify-center gap-[24px] !p-[4px] md:mt-[-120px] md:gap-[12px]"
         >
-          {careers?.map((career: any, i) => (
-            <SwiperSlide
-              key={i}
-              className="shadow-left flex w-[100%] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FEDB99]"
-            >
-              <div className="flex flex-col px-[16px] pb-[24px] pt-[16px]">
-                <h2 className="text-base font-normal text-[#001427] md:text-sm">
-                  {career.division}
-                </h2>
-                <h1 className="mt-[12px] text-2xl font-semibold text-[#191919] md:text-xl">
-                  {career.title}
-                </h1>
-                <Link
-                  href={`/career/${career.title.toLowerCase()}`}
-                  className="mt-[24px] text-base font-medium text-[#7D1418] md:text-sm"
-                >
-                  Check Career
-                </Link>
-              </div>
-            </SwiperSlide>
-          ))}
+          {Array.isArray(careers) &&
+            careers?.map((career: any, i) => (
+              <SwiperSlide
+                key={i}
+                className="shadow-left flex w-[100%] max-w-[356px] flex-col justify-between rounded-[36px] border-2 border-solid border-[#001427] bg-[#FEDB99]"
+              >
+                <div className="flex flex-col px-[16px] pb-[24px] pt-[16px]">
+                  <h2 className="text-base font-normal text-[#001427] md:text-sm">
+                    {career.division}
+                  </h2>
+                  <h1 className="mt-[12px] text-2xl font-semibold text-[#191919] md:text-xl">
+                    {career.title}
+                  </h1>
+                  <Link
+                    href={`/career/${career.title.toLowerCase()}`}
+                    className="mt-[24px] text-base font-medium text-[#7D1418] md:text-sm"
+                  >
+                    Check Career
+                  </Link>
+                </div>
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
       <div
