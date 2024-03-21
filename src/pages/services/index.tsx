@@ -91,7 +91,7 @@ const ServicesPage = () => {
               <div
                 className="mt-[152px] h-[449px] rounded-[48px] bg-[#337362] pt-[90px]"
                 style={{
-                  backgroundImage: "url(../../../public/vector3.png)",
+                  backgroundImage: "url(/vector3.png)",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -148,7 +148,7 @@ const ServicesPage = () => {
             <div
               className="mt-[152px] h-[1184px] rounded-[48px] bg-[#DA6E48]"
               style={{
-                backgroundImage: "url(../../../public/vector6.png)",
+                backgroundImage: "url(/6.png)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",

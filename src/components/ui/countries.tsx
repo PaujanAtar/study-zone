@@ -29,7 +29,7 @@ export const Countries = () => {
               <Link
                 href={`/study-destinations/${country.link.toLowerCase()}`}
                 style={{
-                  backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(../../../public/${country.image})`,
+                  backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${country.image})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",

@@ -28,7 +28,7 @@ export default function Home() {
         <div
           className="container grid grid-cols-2 gap-[100px] pt-[152px] md:flex md:flex-col md:pt-[92px]"
           style={{
-            backgroundImage: "url(../../../public/vector2.png)",
+            backgroundImage: "url(/vector2.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -120,7 +120,7 @@ export default function Home() {
           <div
             className="rounded-[48px] bg-[#FEDB99] pb-[500px] md:rounded-[24px]"
             style={{
-              backgroundImage: "url(../../../public/vector12.png)",
+              backgroundImage: "url(/vector12.png)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",

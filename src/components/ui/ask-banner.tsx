@@ -9,7 +9,7 @@ export const AskBanner = () => {
         <div
           className="flex h-[449px] flex-row items-center justify-between gap-[20px] rounded-[48px] border-2 border-[#000000] bg-[#fffbef] px-[72px] md:h-[620px] md:flex-col md:p-[24px] md:pb-[30px]"
           style={{
-            backgroundImage: "url(../../../public/vector5.png)",
+            backgroundImage: "url(/vector5.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

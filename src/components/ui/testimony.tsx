@@ -13,7 +13,7 @@ export const Testimony = () => {
         <div
           className="h-[735px] rounded-[48px] bg-[#001427] pt-[52px] md:h-[850px] md:pt-[60px]"
           style={{
-            backgroundImage: "url(../../../public/vector4.png)",
+            backgroundImage: "url(/vector4.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
