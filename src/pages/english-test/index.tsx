@@ -26,7 +26,7 @@ const EnglishTest = () => {
             <div
               className="h-[286px] rounded-[48px] bg-[#337362] pt-[90px] md:h-[400px] md:rounded-[24px] md:pt-[48px]"
               style={{
-                backgroundImage: "url(/vector3.png)",
+                backgroundImage: "url(../../../public/vector3.png)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
