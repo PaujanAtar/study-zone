@@ -11,6 +11,8 @@ export const Countries = () => {
     setCountries(parsedData);
   }, []);
 
+  console.log(countries.map((c: any, i: any) => c.image));
+
   return (
     <>
       <div className="container flex flex-col items-center justify-center bg-[#FAFAFA] pb-[180px] pt-[160px] md:pt-[80px]">
@@ -26,26 +28,28 @@ export const Countries = () => {
         <div className="mt-[48px] grid grid-cols-4 gap-[24px] md:grid-cols-1">
           {Array.isArray(countries) &&
             countries?.map((country: any, i) => (
-              <Link
-                href={`/study-destinations/${country.link.toLowerCase()}`}
-                style={{
-                  backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${country.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }}
-                key={i}
-                className="shadow-left relative h-[480px] max-w-[318px] rounded-[36px] border-2 border-solid border-[#001427] md:h-[360px]"
-              >
-                <div className="flex h-full flex-col justify-end px-[24px] pb-[24px]">
-                  <h1 className="break-all text-[32px] font-medium text-[#FFFFFF]">
-                    {country.country}
-                  </h1>
-                  <p className="mt-[12px] line-clamp-6 text-sm font-normal text-[#FFFFFF]">
-                    {country.text}
-                  </p>
-                </div>
-              </Link>
+              <>
+                <Link
+                  href={`/study-destinations/${country.link.toLowerCase()}`}
+                  style={{
+                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${country.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  key={i}
+                  className="shadow-left relative h-[480px] max-w-[318px] rounded-[36px] border-2 border-solid border-[#001427] md:h-[360px]"
+                >
+                  <div className="flex h-full flex-col justify-end px-[24px] pb-[24px]">
+                    <h1 className="break-all text-[32px] font-medium text-[#FFFFFF]">
+                      {country.country}
+                    </h1>
+                    <p className="mt-[12px] line-clamp-6 text-sm font-normal text-[#FFFFFF]">
+                      {country.text}
+                    </p>
+                  </div>
+                </Link>
+              </>
             ))}
         </div>
         <div className="mt-[68px]">
