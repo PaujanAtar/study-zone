@@ -12,7 +12,7 @@ export const Events = () => {
         <div
           className="h-[449px] rounded-[48px] bg-[#337362] pt-[90px] md:rounded-[24px] md:pt-[48px] md:text-center"
           style={{
-            backgroundImage: "url(/vector3.png)",
+            backgroundImage: "url(../../../public/vector3.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

@@ -48,7 +48,7 @@ const AboutUs = () => {
           <div
             className="md:rounded- h-[1184px] rounded-[48px] bg-[#DA6E48] md:h-[619px] md:rounded-[24px]"
             style={{
-              backgroundImage: "url(/vector6.png)",
+              backgroundImage: "url(../../../public/vector6.png)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -111,7 +111,7 @@ const AboutUs = () => {
           <div
             className="h-[449px] rounded-[48px] bg-[#337362] pt-[90px] md:h-[441px] md:rounded-[24px] md:pt-[48px]"
             style={{
-              backgroundImage: "url(/vector3.png)",
+              backgroundImage: "url(../../../public/vector3.png)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -139,7 +139,7 @@ const AboutUs = () => {
           <div
             className="h-[1276px] rounded-[48px] bg-[#FEDB99] md:h-[934px]"
             style={{
-              backgroundImage: "url(/vector12.png)",
+              backgroundImage: "url(../../../public/vector12.png)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",

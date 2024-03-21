@@ -58,7 +58,7 @@ const CountryDetails = () => {
         <div
           className="rounded-t-[48px] bg-[#FFFBEF] py-[72px] md:pt-0"
           style={{
-            backgroundImage: "url(/vector2.png)",
+            backgroundImage: "url(../../../public/vector2.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -97,7 +97,7 @@ const CountryDetails = () => {
         <div
           className="rounded-b-[48px] bg-[#DA6E48] py-[72px]"
           style={{
-            backgroundImage: "url(/vector6.png)",
+            backgroundImage: "url(../../../public/vector6.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -260,7 +260,7 @@ const CountryDetails = () => {
         <div
           className="rounded-t-[48px] bg-[#337362] py-[72px]"
           style={{
-            backgroundImage: "url(/vector3.png)",
+            backgroundImage: "url(../../../public/vector3.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -296,7 +296,7 @@ const CountryDetails = () => {
         <div
           className="rounded-b-[48px] bg-[#DA6E48] py-[72px]"
           style={{
-            backgroundImage: "url(/vector6.png)",
+            backgroundImage: "url(../../../public/vector6.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
