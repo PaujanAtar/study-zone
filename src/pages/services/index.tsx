@@ -91,7 +91,7 @@ const ServicesPage = () => {
               <div
                 className="mt-[152px] h-[449px] rounded-[48px] bg-[#337362] pt-[90px]"
                 style={{
-                  backgroundImage: "url(/vector3.png)",
+                  backgroundImage: "url(/Vector3.png)",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",

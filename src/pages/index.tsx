@@ -120,7 +120,7 @@ export default function Home() {
           <div
             className="rounded-[48px] bg-[#FEDB99] pb-[500px] md:rounded-[24px]"
             style={{
-              backgroundImage: "url(/vector12.png)",
+              backgroundImage: "url(/Vector12.png)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
